@@ -23,7 +23,7 @@ function addtask(titre,description){
 }
 
 
-function removetask = titreTask => {listtask.splice(
+function removetask(titreTask)  {listtask.splice(
     listtask.findIndex(item=>item.titre ,item.titre===titreTask),1)
     return listtask;
 
@@ -32,4 +32,4 @@ function removetask = titreTask => {listtask.splice(
 
 
 
-module.exports={inittask,addtask,affichelistetask};
+module.exports={inittask,addtask,affichelistetask,removetask};
