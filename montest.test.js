@@ -2,12 +2,15 @@
 //const list = require('./todolist/affichelistetask');
 
 
+global.console = {
+    log: jest.fn(),
+    info: jest.fn(),
+    error: jest.fn()
+}
 
-function affiche(listtask){
+function affiche(task){
 
-
-    return 
-
+    console.log( "titre = ", task.titre ,"  description = " , task.description,"/n");
 
 }
 
@@ -113,3 +116,17 @@ it('update task' ,function(){
 
 
 });
+
+
+
+
+describe('Tests my console.log', () => {
+    it('afficher task', () => {
+
+        const task = { titre :"titre" , description : "description "};
+        affiche(task);
+        expect(global.console.log).toHaveBeenCalledWith(
+            affiche(task)
+        )
+    })
+})
